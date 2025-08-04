@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SASSA Grant Eligibility Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>SASSA Grant Checker</h1>
+
+    <label for="language">Language / Ulwimi / Ulimi:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="zu">isiZulu</option>
+      <option value="xh">isiXhosa</option>
+    </select>
+
+    <form id="eligibilityForm">
+      <label><span id="grantLabel">Grant Type:</span>
+        <select id="grantType" required>
+          <option value="">-- Select --</option>
+          <option value="oldAge">Old Age Grant</option>
+          <option value="srd">Social Relief of Distress (SRD)</option>
+        </select>
+      </label>
+
+      <label><span id="ageLabel">Age:</span>
+        <input type="number" id="age" min="0" required>
+      </label>
+
+      <label><span id="maritalLabel">Marital Status:</span>
+        <select id="married" required>
+          <option value="">-- Select --</option>
+          <option value="single">Single</option>
+          <option value="married">Married</option>
+        </select>
+      </label>
+
+      <label><span id="incomeLabel">Monthly Income:</span>
+        <div class="currency-input">R <input type="text" id="income" required placeholder="e.g. 8,000"></div>
+      </label>
+
+      <label id="employmentField" style="display:none;"><span id="unemployedLabel">Unemployed?</span>
+        <select id="unemployed">
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label>
+
+      <button type="submit">Check Eligibility</button>
+    </form>
+
+    <div id="result" class="result"></div>
+    <p class="sassa-link">
+  For official information and to check your SASSA grant status, visit the
+  <a href="https://srd.sassa.gov.za/" target="_blank" rel="noopener noreferrer">official SASSA website</a>.
+</p>
+  </div>
+  <script src="script.js"></script>
+
+  <p><a href="language-guide.html">Need help understanding terms? Click here</a></p>
+</body>
+</html>
